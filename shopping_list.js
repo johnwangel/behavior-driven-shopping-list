@@ -5,4 +5,6 @@ class ShoppingList{
   }
 
 
+//var badFn = function () { throw new TypeError('Illegal salmon!'); };
+
 }

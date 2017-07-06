@@ -82,5 +82,10 @@ describe('Shopping List Class', function(){
   it('Should take a ShoppingListItem object', function() {
     expect(someList.addItem).is.instanceOf(ShoppingListItem);
   });
+  it('Should throw an error if not a ShoppingListItem', function(){
+      var badObj = someList.addItem({});
+      expect(badObj).to.throw(TypeError);
+  });
+
 
 });
