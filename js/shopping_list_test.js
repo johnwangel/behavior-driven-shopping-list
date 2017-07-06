@@ -6,6 +6,7 @@ describe('Shopping List Item Class', function(){
   var someName = null;
   before(function(){
    someName = new ShoppingListItem('carrots', 'a vegetable');
+
  });
   it('Shopping list item is a class', function(){
     expect(listItem).to.be.a('function');
@@ -31,10 +32,18 @@ describe('Shopping List Item Class', function(){
     expect(someName.is_done).to.be.a('boolean');
   });
   it('Should have a method named check', function(){
-    expect(someName).to.be.a('function');
+    expect(someName.check).to.be.a('function');
   });
   it('Should reassign the value of is_done to true', function(){
     someName.check();
-    expect(someName.is_done).to.be(true);
+    expect(someName.is_done).to.be.true;
+  });
+
+  it('Should have a method named uncheck', function(){
+    expect(someName.uncheck).to.be.a('function');
+  });
+  it('Should reassign the value of is_done to true', function(){
+    someName.uncheck();
+    expect(someName.is_done).to.be.false;
   });
 });
