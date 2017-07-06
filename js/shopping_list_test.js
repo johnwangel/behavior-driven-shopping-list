@@ -42,8 +42,17 @@ describe('Shopping List Item Class', function(){
   it('Should have a method named uncheck', function(){
     expect(someName.uncheck).to.be.a('function');
   });
-  it('Should reassign the value of is_done to true', function(){
+  it('Should reassign the value of is_done to false', function(){
     someName.uncheck();
     expect(someName.is_done).to.be.false;
+  });
+  it('Should have a method named render', function(){
+    expect(someName.render).to.be.a('function');
+  });
+  it('Should return a string', function(){
+    expect(someName.render).to.be.a('string');
+  });
+  it('It should return a li with a class of "completed_is_done"', function(){
+    expect(someName.render).contains('<li class="completed_' + someName.is_done + '">');
   });
 });
