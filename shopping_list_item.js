@@ -1,9 +1,7 @@
 /* jshint esversion:6*/
 
 class ShoppingListItem {
-  constructor(){
-
+  constructor(name){
+    this.name = name;
   }
 }
-
-//module.exports = ShoppingListItem;
