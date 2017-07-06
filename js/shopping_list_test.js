@@ -77,7 +77,7 @@ describe('Shopping List Class', function(){
     expect(someList).to.have.ownPropertyDescriptor('items');
   });
 
-  it('Should have a mehtod addItem', function(){
+  it('Should have a method addItem', function(){
     expect(someList.addItem).to.be.a('function');
   });
   it('Should take a ShoppingListItem object', function() {
@@ -86,8 +86,20 @@ describe('Shopping List Class', function(){
   });
 
   it('Should throw an error if not a ShoppingListItem', function(){
-      var badObj = someList.addItem({});
-      expect(badObj).to.throw(TypeError);
+    expect(someList.addItem.bind(this)).to.throw(TypeError);
+  });
+  it('Should have a method removeItem', function(){
+    expect(someList.removeItem).to.be.a('function');
+  });
+  it('Should take a ShoppingListItem object or no argument', function() {
+    someList.removeItem(someItem);
+    expect(someItem).to.be.a.instanceOf(ShoppingListItem) || expect(someItem).to.be.undefined;
+  });
+  it('ShoppingListItem should exist within ShoppingList Array', function(){
+    expect(someList).to.have.ordered.members(ShoppingListItem);
+  });
+  it('Should throw an error if not a ShoppingListItem', function(){
+    expect(someList.removeItem.bind(this, {})).to.throw(Error);
   });
 
 });
