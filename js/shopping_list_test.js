@@ -97,7 +97,6 @@ describe('Shopping List Class', function(){
   });
   it('ShoppingListItem should exist within ShoppingList Array', function(){
     someList.addItem(someItem);
-    console.log(someList);
     if (ShoppingListItem !== undefined) { expect(someList).to.include(ShoppingListItem); }
   });
   it('Should throw an error if not a ShoppingListItem', function(){
@@ -106,14 +105,14 @@ describe('Shopping List Class', function(){
   it('Should have a method render', function(){
     expect(someList.render).to.be.a('function');
   });
-  it('It should return a ul with a class of "completed_is_done"', function(){
-    expect(someName.render()).contains('<ul>');
+  it('It should return a ul', function(){
+    expect(someList.render()).contains('<ul>');
   });
-  it('It should return a list containing each of the items', function(){
-    var itemNames = someList.map( ( item ) => {
+  it('It should return a list containing each of the items within the ul', function(){
+    var itemNames = someList.items.map( ( item ) => {
       return item.name;
     });
-    expect(someName.render()).to.include(itemNames);
+    expect(someList.render()).to.include(itemNames);
   });
 
 });

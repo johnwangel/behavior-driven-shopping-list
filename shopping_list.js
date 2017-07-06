@@ -1,4 +1,5 @@
 /* jshint esversion:6*/
+
 class ShoppingList{
   constructor(){
     this.items = [];
@@ -21,5 +22,13 @@ class ShoppingList{
       throw new Error('You can\'t put that there, buddy!');
     }
   }
-
+  render() {
+    var renderOutput = '<ul>';
+    for (let i = 0; i < this.items.length; i++){
+      renderOutput += this.items[i].render();
+    }
+    renderOutput += '</ul>';
+    console.log(renderOutput);
+    return renderOutput;
+  }
 }
