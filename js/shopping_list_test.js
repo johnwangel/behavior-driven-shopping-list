@@ -11,11 +11,9 @@ describe('Shopping List Item Class', function(){
   it('Shopping list item is a class', function(){
     expect(listItem).to.be.a('function');
   });
-
   it('Should have a property of name', function(){
     expect(listItem).to.have.ownPropertyDescriptor('name');
   });
-
   it('Name property should be a string', function(){
     expect(someName.name).to.be.a('string');
   });
@@ -58,7 +56,23 @@ describe('Shopping List Item Class', function(){
   it('It should return a <span> with the list item name', function(){
     expect(someName.render()).contains('<span>' + someName.name + '</span>');
   });
-    it('It should return a <span> with the description name', function(){
+  it('It should return a <span> with the item description', function(){
     expect(someName.render()).contains('<span>' + someName.description + '</span>');
+  });
+});
+
+describe('Shopping List Class', function(){
+  let list = ShoppingList;
+  let someList = null;
+
+  before(function(){
+    someList = new ShoppingList();
+  });
+
+  it('Shopping list is a class', function(){
+    expect(list).to.be.a('function');
+  });
+  it('Should have a property of items', function(){
+    expect(list).to.have.ownPropertyDescriptor('items');
   });
 });
