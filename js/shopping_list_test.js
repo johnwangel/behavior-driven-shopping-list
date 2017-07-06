@@ -73,6 +73,14 @@ describe('Shopping List Class', function(){
     expect(list).to.be.a('function');
   });
   it('Should have a property of items', function(){
-    expect(list).to.have.ownPropertyDescriptor('items');
+    expect(someList).to.have.ownPropertyDescriptor('items');
   });
+
+  it('Should have a mehtod addItem', function(){
+    expect(someList.addItem).to.be.a('function');
+  });
+  it('Should take a ShoppingListItem object', function() {
+    expect(someList.addItem).is.instanceOf(ShoppingListItem);
+  });
+
 });
