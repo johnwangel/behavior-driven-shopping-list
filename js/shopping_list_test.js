@@ -50,9 +50,15 @@ describe('Shopping List Item Class', function(){
     expect(someName.render).to.be.a('function');
   });
   it('Should return a string', function(){
-    expect(someName.render).to.be.a('string');
+    expect(someName.render()).to.be.a('string');
   });
   it('It should return a li with a class of "completed_is_done"', function(){
-    expect(someName.render).contains('<li class="completed_' + someName.is_done + '">');
+    expect(someName.render()).contains('<li class="completed_' + someName.is_done + '">');
+  });
+  it('It should return a <span> with the list item name', function(){
+    expect(someName.render()).contains('<span>' + someName.name + '</span>');
+  });
+    it('It should return a <span> with the description name', function(){
+    expect(someName.render()).contains('<span>' + someName.description + '</span>');
   });
 });

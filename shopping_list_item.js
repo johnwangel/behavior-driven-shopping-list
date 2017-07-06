@@ -13,4 +13,14 @@ class ShoppingListItem {
   uncheck() {
     this.is_done = false;
   }
+
+  render() {
+    var some_html_output = '<ul> \
+      <li class="completed_' + this.is_done + '"> \
+        <span>' + this.name + '</span> \
+        <span>' + this.description + '</span> \
+      </li> \
+    <ul>';
+    return some_html_output;
+  }
 }
