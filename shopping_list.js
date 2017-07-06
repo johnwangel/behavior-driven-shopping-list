@@ -4,6 +4,9 @@ class ShoppingList{
     this.items = [];
   }
 
+  addItem(shopItem){
+    this.items.push(shopItem);
+  }
 
 //var badFn = function () { throw new TypeError('Illegal salmon!'); };
 
