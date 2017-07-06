@@ -67,6 +67,7 @@ describe('Shopping List Class', function(){
 
   before(function(){
     someList = new ShoppingList();
+    someItem = new ShoppingListItem('carrots', 'a vegetable');
   });
 
   it('Shopping list is a class', function(){
@@ -80,7 +81,7 @@ describe('Shopping List Class', function(){
     expect(someList.addItem).to.be.a('function');
   });
   it('Should take a ShoppingListItem object', function() {
-    expect(someList.addItem).is.instanceOf(ShoppingListItem);
+    someList.addItem(someItem);
+    expect(someItem).to.be.a.instanceOf(ShoppingListItem);
   });
-
 });

@@ -3,6 +3,7 @@ class ShoppingList{
   constructor(){
     this.items = [];
   }
-
-
+  addItem(shopItem){
+    this.items.push(shopItem);
+  }
 }
