@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --watch --bail"
   },
   "repository": {
     "type": "git",
