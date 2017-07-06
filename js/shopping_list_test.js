@@ -30,6 +30,11 @@ describe('Shopping List Item Class', function(){
   it('is_done property should be a boolean', function(){
     expect(someName.is_done).to.be.a('boolean');
   });
-
-
+  it('Should have a method named check', function(){
+    expect(someName).to.be.a('function');
+  });
+  it('Should reassign the value of is_done to true', function(){
+    someName.check();
+    expect(someName.is_done).to.be(true);
+  });
 });
