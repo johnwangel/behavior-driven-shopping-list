@@ -10,6 +10,16 @@ class ShoppingList{
     this.items.push(shopItem);
   }
 
-//var badFn = function () { throw new TypeError('Illegal salmon!'); };
+  removeItem(shopItem){
+    if (this.items.some( ( thisItem ) => {
+      return thisItem === shopItem;
+    })) {
+      this.items.splice(this.items.indexOf(shopItem), 1);
+    } else if ( shopItem === undefined ) {
+      this.items.pop();
+    } else {
+      throw new Error('You can\'t put that there, buddy!');
+    }
+  }
 
 }
