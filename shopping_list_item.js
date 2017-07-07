@@ -15,7 +15,6 @@ class ShoppingListItem {
   }
 
   render(n) {
-    var idn = ''
     var renderOutput =
     '<li class="completed_' + this.is_done + '"> \
     <input type="checkbox"><span>' + this.name + ': </span> \
