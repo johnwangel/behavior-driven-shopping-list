@@ -1,15 +1,15 @@
 /* jshint esversion:6*/
-const shoppingCart = document.getElementById('content');
 const title = document.getElementsByName('title');
 const description = document.getElementsByName('description');
 let list = new ShoppingList();
-let renderOuput = list.render();
-shoppingCart.innerHTML = renderOuput;
+const shoppingCart = document.getElementById('content');
+shoppingCart.appendChild(list.render());
 
 function add_to_shopping_list(){
   var new_shopping_list_item = new ShoppingListItem(title[0].value, description[0].value);
   list.addItem(new_shopping_list_item);
-  shoppingCart.innerHTML = list.render();
+  shoppingCart.innerHTML = '';
+  shoppingCart.appendChild(list.render());
   title[0].value = '';
   description[0].value = '';
   createEventListeners();
@@ -45,7 +45,8 @@ function removeItemButtonClicked(target){
     }
   }
   list.removeItem(list.items[idx]);
-  shoppingCart.innerHTML = list.render();
+  shoppingCart.innerHTML = '';
+  shoppingCart.appendChild(list.render());
   createEventListeners();
 }
 

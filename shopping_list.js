@@ -13,21 +13,19 @@ class ShoppingList{
 
   removeItem(shopItem){
     if (this.items.indexOf(shopItem) > -1) {
-      console.log('splice');
       this.items.splice(this.items.indexOf(shopItem), 1);
     } else if ( shopItem === undefined ) {
-      console.log('pop');
       this.items.pop();
     } else {
       throw new Error('You can\'t put that there, buddy!');
     }
   }
+
   render() {
-    var renderOutput = '<ul>';
+    var listWrapper = document.createElement('ul');
     for (let i = 0; i < this.items.length; i++){
-      renderOutput += this.items[i].render(i);
+      listWrapper.appendChild(this.items[i].render(i));
     }
-    renderOutput += '</ul>';
-    return renderOutput;
+    return listWrapper;
   }
 }
