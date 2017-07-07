@@ -14,12 +14,15 @@ class ShoppingListItem {
     this.is_done = false;
   }
 
-  render() {
+  render(n) {
+    var idn = ''
     var renderOutput =
     '<li class="completed_' + this.is_done + '"> \
-    <span>' + this.name + '</span> \
+    <input type="checkbox"><span>' + this.name + ': </span> \
     <span>' + this.description + '</span> \
     </li>';
+
     return renderOutput;
   }
+
 }
