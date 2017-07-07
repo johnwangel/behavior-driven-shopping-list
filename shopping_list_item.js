@@ -15,10 +15,11 @@ class ShoppingListItem {
   }
 
   render(n) {
+
     var renderOutput =
     '<li class="completed_' + this.is_done + '"> \
     <input type="checkbox"><span>' + this.name + ': </span> \
-    <span>' + this.description + '</span> \
+    <span>' + this.description + '</span> <button type="remove">x</button>\
     </li>';
 
     return renderOutput;

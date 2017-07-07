@@ -12,11 +12,11 @@ class ShoppingList{
   }
 
   removeItem(shopItem){
-    if (this.items.some( ( thisItem ) => {
-      return thisItem === shopItem;
-    })) {
+    if (this.items.indexOf(shopItem) > -1) {
+      console.log('splice');
       this.items.splice(this.items.indexOf(shopItem), 1);
     } else if ( shopItem === undefined ) {
+      console.log('pop');
       this.items.pop();
     } else {
       throw new Error('You can\'t put that there, buddy!');
